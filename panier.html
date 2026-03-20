@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Panier - GNINOU_FOOD</title>
+    <link rel="stylesheet" href="panier.css">
+    <link rel="icon" type="image/png" href="res/logo.png">
+</head>
+<body>
+    <!-- En-tête -->
+    <header class="entete">
+        <div class="logo">
+            <img src="res/logo.png" alt="GNINOU FOOD">
+        </div>
+        <!-- Lien retour unique -->
+        <nav class="retour-accueil">
+            <a href="Page.principale.html">Accueil</a>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="conteneur-panier">
+        <!-- Liste des produits -->
+        <section class="articles-panier">
+            <div class="article-panier">
+                <img src="res/burger.png" alt="Burger Royal">
+                <div class="details-article">
+                    <h3>Burger Royal</h3>
+                    <p>Prix unitaire : 3000 CFA</p>
+                    <div class="controle-quantite">
+                        <button class="bouton moins">−</button>
+                        <input type="number" value="2" min="1">
+                        <button class="bouton plus">+</button>
+                    </div>
+                    <p class="total-article">Total : 6000 CFA</p>
+                </div>
+                <button class="bouton supprimer">Supprimer</button>
+            </div>
+        </section>
+
+        <!-- Résumé de commande -->
+        <aside class="resume-panier">
+            <h2>Résumé de commande</h2>
+            <p class="sous-total">Sous-total : 6000 CFA</p>
+            <p class="livraison">Livraison : 1000 CFA</p>
+            <p class="total-general">Total : 7000 CFA</p>
+            <button class="bouton commander">Commander</button>
+            <button class="bouton vider">Vider le panier</button>
+            <p class="reassurance">✅ Paiement sécurisé<br>🚚 Livraison rapide<br>📞 Service client</p>
+        </aside>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="pied-page">
+        <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

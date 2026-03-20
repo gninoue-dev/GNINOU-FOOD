@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>GNINOU_FOOD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="principale.css">
+    <link rel="icon" type="image/png" href="res/logo.png">
+    <!-- Font Awesome il me permet d'appeler une bibliothèque d'icone enligne d'ou son appel dans le head-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header class="entete">
+  <div class="logo">
+        <img src="res/logo.png" alt="Logo GninouFood">
+  </div>
+
+  <div class="barre-recherche">
+        <input type="text" placeholder="Rechercher un plat...">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+
+  <div class="icones-entete">
+        <!-- Case à cocher cachée -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- Icône hamburger -->
+        <label for="menu-toggle" class="icone-hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <!-- Icône panier -->
+        <a href="panier.html" class="icone-panier">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <span class="compteur">0</span>
+        </a>
+        <!-- Menu déroulant -->
+        <nav class="menu">
+            <a href="#">Compte</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+  </div>
+</header>
+
+<!-- Contenu principal -->
+<main>
+    <!-- Boutons inscription / connexion -->
+    <div class="inscription-connexion">
+        <button onclick="location.href='page_inscription.html'"><i class="fa-solid fa-user-plus"></i> Inscription</button>
+        <button onclick="location.href='page_connexion.html'"><i class="fa-solid fa-right-to-bracket"></i> Se connecter</button>
+    </div>
+
+    <!-- Services -->
+    <h1>Nos Services</h1>
+    <section class="tableau-menu">
+        <a href="menu_local.html" class="carte-menu">
+            <div class="details-carte">
+                <h2><i class="fa-solid fa-utensils"></i> Plats Ivoiriens</h2>
+                <h3>Profite des plats de chez toi en un seul clic</h3>
+            </div>
+            <img src="res/garba.jpeg" alt="plats ivoiriens">
+        </a>
+
+        <a href="menu_etranger.html" class="carte-menu">
+            <div class="details-carte">
+                <h2><i class="fa-solid fa-earth-africa"></i> Plats Étrangers</h2>
+                <h3>Découvre des recettes d'autres pays tout en restant chez toi</h3>
+            </div>
+            <img src="res/plats_japonais.png" alt="plats étrangers">
+        </a>
+
+        <a href="menu_douceurs.html" class="carte-menu">
+            <div class="details-carte">
+                <h2><i class="fa-solid fa-cake-candles"></i> Douceurs</h2>
+                <h3>Régale-toi avec tes péchés mignons sucrés</h3>
+            </div>
+            <img src="res/douceur.jpeg" alt="douceurs">
+        </a>
+
+        <a href="menu_boisson.html" class="carte-menu">
+            <div class="details-carte">
+                <h2><i class="fa-solid fa-wine-glass"></i> Boissons</h2>
+                <h3>Un arsenal de boissons fraîches en un mouvement</h3>
+            </div>
+            <img src="res/boisson.jpeg" alt="boissons">
+        </a>
+    </section>
+
+    <!-- Plats du jour -->
+    <h1>Nos Plats du Jour</h1>
+    <section class="tableau-menu">
+        <div class="carte-menu">
+            <div class="details-carte">
+                <h2>Attiéké Poisson</h2>
+                <h3>Poisson braisé, attiéké, tomate, oignon, piment doux</h3>
+                <span class="prix"><i class="fa-solid fa-tag"></i> 3 500 FCFA</span>
+            </div>
+            <img src="res/attiekepoisson.jpeg" alt="Attiéké poisson">
+        </div>
+
+        <div class="carte-menu">
+            <div class="details-carte">
+                <h2>Sauce Bawhin</h2>
+                <h3>La sauce africaine qui fait sensation</>h3
+                <span class="prix"><i class="fa-solid fa-tag"></i> 3 000 FCFA</span>
+            </div>
+            <img src="res/bawhin.jpeg" alt="Sauce Bawhin">
+        </div>
+    </section>
+
+    <!-- Boissons du jour -->
+    <h1>Nos Boissons du Jour</h1>
+    <section class="tableau-menu">
+        <div class="carte-menu">
+            <div class="details-carte">
+                <h2>Heineken</h2>
+                <h3>Bouteille de 1.5L glacée</h3>
+                <span class="prix"><i class="fa-solid fa-tag"></i> 2 500 FCFA</span>
+            </div>
+            <img src="res/heineken.jpeg" alt="Heineken" style="cursor: pointer; background-color: orange; transition: 1s;">
+        </div>
+
+        <div class="carte-menu">
+            <div class="details-carte">
+                <h2>Coca-Cola</h2>
+                <h3>Canette fraîche 33cl</h3>
+                <span class="prix"><i class="fa-solid fa-tag"></i> 1 000 FCFA</span>
+            </div>
+            <img src="res/cocacola.jpeg" alt="Coca-Cola">
+        </div>
+
+        <div class="carte-menu">
+            <div class="details-carte">
+                <h2>Jus de Bissap</h2>
+                <h3>Jus naturel maison, servi frais</h3>
+                <span class="prix"><i class="fa-solid fa-tag"></i> 1 500 FCFA</span>
+            </div>
+            <img src="res/jusbissap.jpeg" alt="Jus de Bissap">
+        </div>
+    </section>
+
+    <!-- Douceurs du jour -->
+    <h1>Nos Douceurs du Jour</h1>
+    <section class="tableau-menu">
+        <div class="carte-menu">
+            <div class="details-carte">
+                <h2>Gâteau au Chocolat</h2>
+                <h3>Moelleux au chocolat fondant</h3>
+                <span class="prix"><i class="fa-solid fa-tag"></i> 2 000 FCFA</span>
+            </div>
+            <img src="res/GâteauChocolat.jpeg" alt="Gâteau au chocolat">
+        </div>
+
+        <div class="carte-menu">
+            <div class="details-carte">
+                <h2>Crêpes Sucrées</h2>
+                <h3>Crêpes garnies de chocolat et banane</h3>
+                <span class="prix"><i class="fa-solid fa-tag"></i> 1 800 FCFA</span>
+            </div>
+            <img src="res/crepe.jpeg" alt="Crêpes sucrées">
+        </div>
+
+        <div class="carte-menu">
+            <div class="details-carte">
+                <h2>Beignets Ivoiriens</h2>
+                <h3>Petits beignets sucrés croustillants</h3>
+                <span class="prix"><i class="fa-solid fa-tag"></i> 1 000 FCFA</span>
+            </div>
+            <img src="res/beignet .jpeg" alt="Beignets ivoiriens">
+        </div>
+    </section>
+</main>
+
+<!-- Pied de page -->
+<footer class="pied-page">
+    <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
+</footer>
+
+</body>
+</html>

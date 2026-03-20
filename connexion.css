@@ -1,0 +1,150 @@
+/* Corps de page */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* dégradé bleu */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #7928ca, #2afeb7); 
+    background-size: 400% 400%; 
+    animation: neonGradient 12s ease infinite;
+}
+
+@keyframes neonGradient { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+} 
+
+/* Zone principale */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0; /* espace haut/bas */
+}
+
+/* Conteneur du formulaire */
+.form-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 320px; /* largeur réduite */
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Titre */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #2193b0;
+    outline: none;
+}
+
+/* Bouton */
+.btn {
+    background: #FF9800;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #e68900;
+    transform: scale(1.05); /* augmente la taille au survol de la souris */
+}
+
+/* Lien de redirection */
+.redirect {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.redirect a {
+    color: #FF9800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.redirect a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #203a43;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+/* 📱 Responsivité */
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 80%; /* plus large sur tablette */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        max-width: 90%; /* prend presque toute la largeur sur mobile */
+        padding: 15px;
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    input, .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

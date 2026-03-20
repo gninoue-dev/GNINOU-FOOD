@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="connexion.css">
+  <link rel="icon" type="image/png" href="res/logo.png">
+</head>
+<body>
+  <main>
+    <div class="form-container">
+      <!-- Logo -->
+      <img src="res/logo.png" alt="GNINOU FOOD" class="logo">
+      
+      <!-- Titre -->
+      <h2>Connexion</h2>
+      
+      <!-- Formulaire de connexion -->
+      <form action="traitement_connexion.php" method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+        
+        <button type="submit" class="btn">Se connecter</button>
+      </form>
+      
+      <!-- Redirection vers inscription -->
+      <p class="redirect">
+        Pas encore inscrit ? <a href="page_inscription.html">Créez un compte</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
+  </footer>
+</body>
+</html>

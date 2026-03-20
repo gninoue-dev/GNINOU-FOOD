@@ -1,0 +1,423 @@
+/* Corps de page */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* dégradé bleu */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #7928ca, #2afeb7); 
+    background-size: 300% 300%; 
+    animation: neonGradient 12s ease infinite;
+}
+@keyframes neonGradient { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+} 
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+/* debut En-tête */
+.entete {
+    background: #ffffff;   /* fond blanc */
+    color: #000000;        /* texte noir pour contraste */
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;/*  debut En-tête */
+.entete {
+    background: #ffffff;   /* fond blanc */
+    color: #000000;        /* texte noir pour contraste */
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* petite ombre élégante */
+}
+
+/* Cacher la case à cocher toujours dans le header */
+#menu-toggle {
+    display: none;
+}
+
+/* Icône hamburger */
+.icone-hamburger {
+    font-size: 40px;
+    color: #000; /* noir sur fond blanc */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.icone-hamburger:hover {
+    color: #FF9800; /* orange au survol */
+    transform: scale(1.2);
+}
+
+/* Menu déroulant caché par défaut */
+.menu {
+    position: absolute;
+    top: 175px; /* sous le header */
+    right: -200px; /* caché hors écran */
+    width: 200px;
+    background: #ffffff; /* fond sombre pour contraste */
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.menu a {
+    display: block;
+    padding: 12px;
+    color: #fff; /* texte blanc par défaut */
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+    background: #ffffff;
+    color: #203a43; /* texte foncé pour rester lisible sur fond orange */
+}
+
+/* Quand le menu est activé */
+#menu-toggle:checked ~ .menu {
+    right: 0;
+}
+
+.logo img {
+    width: 200px;
+    transition: transform 0.3s ease;
+    border-radius: 30px;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Barre de recherche */
+.barre-recherche {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barre-recherche input {
+    width: 350px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #c2c2c2;
+    transition: box-shadow 0.3s ease, width 0.3s ease;
+}
+
+.barre-recherche input:focus {
+    box-shadow: 0 0 8px #FF9800;
+    outline: none;
+    width: 400px;
+}
+
+.barre-recherche button {
+    background: #FF9800;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 25px;
+}
+
+.barre-recherche button:hover {
+    background: #e68900;
+    transform: scale(1.1);
+}
+
+/* Icônes entête */
+.icones-entete {
+    display: flex;
+    align-items: center;
+    gap: 70px; /* espace entre panier et hamburger */
+}
+.icones-entete ul {
+    display: flex;
+    align-items: center;
+}
+
+.icones-entete a {
+    color: #000; /* noir sur fond blanc */
+    font-size: 40px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icones-entete a:hover {
+    color: #FF9800; /* orange au survol */
+    transform: scale(1.2);
+}
+/* fin header */
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* petite ombre élégante */
+}
+/* Cacher la case à cocher toujours dans le header */
+#menu-toggle {
+    display: none;
+}
+
+/* Icône hamburger */
+.icone-hamburger {
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.icone-hamburger:hover {
+    color: #FF9800;
+    transform: scale(1.2);
+}
+
+/* Menu déroulant caché par défaut */
+.menu {
+    position: absolute;
+    top: 80px; /* sous le header */
+    right: -220px; /* caché hors écran */
+    width: 200px;
+    background: #203a43;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.menu a {
+    display: block;
+    padding: 12px;
+     color: #fff; /* texte blanc par défaut */
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.menu a:hover {
+    background: #FF9800;
+}
+
+/* Quand le menu est activé */
+#menu-toggle:checked ~ .menu {
+    right: 0;
+}
+
+
+.logo img {
+    width: 90px;
+    transition: transform 0.3s ease;
+    border-radius: 30px;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Barre de recherche */
+.barre-recherche {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barre-recherche button{
+    font-size: 25px;
+}
+
+.barre-recherche input {
+    width: 300px;             /* largeur augmentée */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease, width 0.3s ease;
+}
+
+.barre-recherche input:focus {
+    box-shadow: 0 0 8px #FF9800;
+    outline: none;
+    width: 350px;             /* effet dynamique : s’élargit au focus */
+}
+
+.barre-recherche button {
+    background: #FF9800;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.barre-recherche button:hover {
+    background: #e68900;
+    transform: scale(1.1);
+}
+
+/* Icônes entête */
+.icones-entete {
+    display: flex;
+    align-items: center;
+    gap: 70px; /* espace entre panier et hamburger */
+}
+.icones-entete ul{
+    display: flex;
+    align-items: center;
+}
+
+.icones-entete a {
+    color: #fff;
+    font-size: 40px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icones-entete a:hover {
+    color: #FF9800;
+    transform: scale(1.2);
+}
+
+.compteur {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  background: #FF9800;
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/*fin header*/
+
+/*debut main*/
+/* Boutons inscription / connexion */
+.inscription-connexion button{
+    font-size: 25px;
+}
+
+.inscription-connexion {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.inscription-connexion button {
+    background: #FF9800;
+    color: #fff;
+    border: none;
+    padding: 25px 70px;
+    margin: 0 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.inscription-connexion button:hover {
+    background: #e68900;
+    transform: translateY(-3px);
+}
+
+/* Tableaux de menus */
+.tableau-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Carte menu */
+.carte-menu {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column; /* texte puis image */
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-menu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Texte dans les cartes */
+.details-carte h3 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.details-carte p {
+    font-size: 14px;
+    color: #555;
+}
+
+.prix {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2193b0;
+    transition: color 0.3s ease;
+}
+
+.carte-menu:hover .prix {
+    color: #FF9800;
+}
+
+/* Images uniformes et plus longues */
+.carte-menu img {
+    width: 100%;
+    height: 300px;        /* hauteur de l'image augmentée */
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-menu:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+/*fin main */
+
+/* Pied de page */
+.pied-page {
+    background: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+/* fin pied de page*/
+
+/* Animations globales */
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+    animation: apparition 0.8s ease;
+}
+
+/* Responsivité */

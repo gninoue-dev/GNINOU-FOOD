@@ -1,0 +1,249 @@
+/* Corps de page */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* dégradé bleu */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #7928ca, #2afeb7); 
+    background-size: 400% 400%; 
+    animation: neonGradient 12s ease infinite;
+}
+@keyframes neonGradient { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+} 
+
+/* En-tête */
+.icones-entete {
+    display: flex;
+    align-items: center;
+    gap: 35px; /* espace entre panier et hamburger */
+}
+
+.icones-entete a {
+    color: #fff;
+    font-size: 30px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icones-entete a i.fa-basket-shopping {
+    position: relative;
+    top: -5px;
+}
+
+.icones-entete a:hover {
+    color: #FF9800;
+    transform: scale(1.2);
+}
+
+.entete {
+    background: #203a43;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 90px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.logo-texte {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF9800;
+}
+
+/* Navigation */
+.navigation-entete {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation-entete a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navigation-entete a:hover {
+    color: #FF9800;
+}
+
+/* Barre de recherche */
+.barre-recherche {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.barre-recherche input {
+    width: 250px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease, width 0.3s ease;
+}
+
+.barre-recherche input:focus {
+    box-shadow: 0 0 8px #FF9800;
+    outline: none;
+    width: 300px;
+}
+
+.barre-recherche button {
+    background: #FF9800;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.barre-recherche button:hover {
+    background: #e68900;
+    transform: scale(1.1);
+}
+
+/* Titre section */
+.titre-section {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 28px;
+    color: #203a43;
+    animation: apparition 0.8s ease;
+}
+
+/* Tableau des plats */
+.tableau-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Carte plat */
+.carte-menu, .carte-plat {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-menu:hover, .carte-plat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Détails plat */
+.details-carte h3, .details-plat h3 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.details-carte p, .details-plat p {
+    font-size: 14px;
+    color: #555;
+}
+
+.prix {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2193b0;
+    transition: color 0.3s ease;
+}
+
+.carte-menu:hover .prix, .carte-plat:hover .prix {
+    color: #FF9800;
+}
+
+/* Images */
+.carte-menu img, .carte-plat img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-menu:hover img, .carte-plat:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Pied de page */
+.pied-page {
+    background: #203a43;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+/* Animations */
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivité */
+@media (max-width: 992px) {
+    .tableau-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carte-menu, .carte-plat {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .carte-menu img, .carte-plat img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .barre-recherche {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .barre-recherche input {
+        width: 200px;
+    }
+
+    .carte-menu img, .carte-plat img {
+        height: 180px;
+    }
+}

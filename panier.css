@@ -1,0 +1,238 @@
+/* Corps de page */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* dégradé bleu */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #7928ca, #2afeb7); 
+    background-size: 400% 400%; 
+    animation: neonGradient 12s ease infinite;
+}
+@keyframes neonGradient { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+} 
+
+/* En-tête */
+.entete {
+    background: #203a43; /* bleu foncé */
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.entete .logo img {
+    width: 80px;
+}
+
+.retour-accueil a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    background: #FF9800;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.retour-accueil a:hover {
+    background: #e68900;
+}
+
+/* Conteneur principal */
+.conteneur-panier {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px;
+}
+
+/* Liste des articles */
+.articles-panier {
+    flex: 2;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.article-panier {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.article-panier img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background: #ccc; /* placeholder */
+}
+
+.details-article {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.details-article h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.details-article p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Contrôle de quantité */
+.controle-quantite {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.controle-quantite input {
+    width: 50px;
+    text-align: center;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Boutons génériques */
+.bouton {
+    background: #FF9800;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 14px;
+}
+
+.bouton:hover {
+    background: #e68900;
+}
+
+/* Boutons spécifiques */
+.plus, .moins {
+    font-size: 18px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* rond pour plus de style */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.supprimer {
+    background: #f44336; /* rouge pour supprimer */
+}
+
+.supprimer:hover {
+    background: #d32f2f;
+}
+
+.vider {
+    background: #f44336; /* rouge pour vider le panier */
+    margin-top: 10px;
+}
+
+.vider:hover {
+    background: #d32f2f;
+}
+
+.commander {
+    margin-top: 15px;
+}
+
+/* Résumé de commande */
+.resume-panier {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.resume-panier h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.resume-panier p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.total-general {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2193b0;
+}
+
+.reassurance {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Pied de page */
+.pied-page {
+    background: #203a43;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* 📱 Responsivité */
+@media (max-width: 992px) {
+    .conteneur-panier {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .articles-panier, .resume-panier {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-panier {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .article-panier img {
+        margin-bottom: 10px;
+    }
+
+    .supprimer {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+
+    .controle-quantite {
+        gap: 5px;
+    }
+}

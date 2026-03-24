@@ -1,7 +1,7 @@
 /* Corps de page */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* dégradé bleu */
+    font-size: 14px; /* taille de police réduite pour tout le site */
     margin: 0;
     padding: 0;
     display: flex;
@@ -23,23 +23,11 @@ h1{
 h2{
     text-align: center;
 }
-
-/* debut En-tête */
+/* En-tête */
 .entete {
-    background: #ffffff;   /* fond blanc */
+    background: #203a43;   /* fond bleu foncé harmonieux avec le menu et le corps */
     color: #000000;        /* texte noir pour contraste */
-    padding: 15px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1000;/*  debut En-tête */
-.entete {
-    background: #ffffff;   /* fond blanc */
-    color: #000000;        /* texte noir pour contraste */
-    padding: 15px 30px;
+    padding: 10px 20px; /* padding réduit */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,7 +37,6 @@ h2{
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* petite ombre élégante */
 }
-
 /* Cacher la case à cocher toujours dans le header */
 #menu-toggle {
     display: none;
@@ -57,125 +44,7 @@ h2{
 
 /* Icône hamburger */
 .icone-hamburger {
-    font-size: 40px;
-    color: #000; /* noir sur fond blanc */
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-.icone-hamburger:hover {
-    color: #FF9800; /* orange au survol */
-    transform: scale(1.2);
-}
-
-/* Menu déroulant caché par défaut */
-.menu {
-    position: absolute;
-    top: 175px; /* sous le header */
-    right: -200px; /* caché hors écran */
-    width: 200px;
-    background: #ffffff; /* fond sombre pour contraste */
-    transition: right 0.3s ease;
-    z-index: 999;
-}
-
-.menu a {
-    display: block;
-    padding: 12px;
-    color: #fff; /* texte blanc par défaut */
-    text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.menu a:hover {
-    background: #ffffff;
-    color: #203a43; /* texte foncé pour rester lisible sur fond orange */
-}
-
-/* Quand le menu est activé */
-#menu-toggle:checked ~ .menu {
-    right: 0;
-}
-
-.logo img {
-    width: 200px;
-    transition: transform 0.3s ease;
-    border-radius: 30px;
-}
-
-.logo img:hover {
-    transform: scale(1.1);
-}
-
-/* Barre de recherche */
-.barre-recherche {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.barre-recherche input {
-    width: 350px;
-    padding: 10px;
-    border-radius: 6px;
-    border: 2px solid #c2c2c2;
-    transition: box-shadow 0.3s ease, width 0.3s ease;
-}
-
-.barre-recherche input:focus {
-    box-shadow: 0 0 8px #FF9800;
-    outline: none;
-    width: 400px;
-}
-
-.barre-recherche button {
-    background: #FF9800;
-    border: none;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    font-size: 25px;
-}
-
-.barre-recherche button:hover {
-    background: #e68900;
-    transform: scale(1.1);
-}
-
-/* Icônes entête */
-.icones-entete {
-    display: flex;
-    align-items: center;
-    gap: 70px; /* espace entre panier et hamburger */
-}
-.icones-entete ul {
-    display: flex;
-    align-items: center;
-}
-
-.icones-entete a {
-    color: #000; /* noir sur fond blanc */
-    font-size: 40px;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.icones-entete a:hover {
-    color: #FF9800; /* orange au survol */
-    transform: scale(1.2);
-}
-/* fin header */
-
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* petite ombre élégante */
-}
-/* Cacher la case à cocher toujours dans le header */
-#menu-toggle {
-    display: none;
-}
-
-/* Icône hamburger */
-.icone-hamburger {
-    font-size: 40px;
+    font-size: 35px; /* taille réduite */
     color: #fff;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease;
@@ -188,9 +57,9 @@ h2{
 /* Menu déroulant caché par défaut */
 .menu {
     position: absolute;
-    top: 80px; /* sous le header */
-    right: -220px; /* caché hors écran */
-    width: 200px;
+    top: 60px; /* ajusté */
+    right: -180px; /* caché hors écran, largeur réduite */
+    width: 180px; /* largeur réduite */
     background: #203a43;
     transition: right 0.3s ease;
     z-index: 999;
@@ -201,11 +70,12 @@ h2{
     padding: 12px;
      color: #fff; /* texte blanc par défaut */
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .menu a:hover {
     background: #FF9800;
+    color: #000 !important; /* noir pour contraste sur fond orange */
 }
 
 /* Quand le menu est activé */
@@ -215,7 +85,7 @@ h2{
 
 
 .logo img {
-    width: 90px;
+    width: 70px; /* taille réduite */
     transition: transform 0.3s ease;
     border-radius: 30px;
 }
@@ -236,8 +106,8 @@ h2{
 }
 
 .barre-recherche input {
-    width: 300px;             /* largeur augmentée */
-    padding: 10px;
+    width: 250px; /* largeur réduite */
+    padding: 8px; /* padding réduit */
     border-radius: 6px;
     border: 1px solid #ccc;
     transition: box-shadow 0.3s ease, width 0.3s ease;
@@ -246,7 +116,7 @@ h2{
 .barre-recherche input:focus {
     box-shadow: 0 0 8px #FF9800;
     outline: none;
-    width: 350px;             /* effet dynamique : s’élargit au focus */
+    width: 300px; /* ajusté */
 }
 
 .barre-recherche button {
@@ -277,7 +147,7 @@ h2{
 
 .icones-entete a {
     color: #fff;
-    font-size: 40px;
+    font-size: 35px; /* taille réduite */
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -308,18 +178,19 @@ h2{
 
 .inscription-connexion {
     text-align: center;
-    margin: 30px 0;
+    margin: 20px 0; /* margin réduit */
 }
 
 .inscription-connexion button {
     background: #FF9800;
     color: #fff;
     border: none;
-    padding: 25px 70px;
+    padding: 20px 50px; /* padding réduit */
     margin: 0 10px;
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 20px; /* taille réduite */
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
@@ -332,24 +203,24 @@ h2{
 .tableau-menu {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px; /* gap réduit */
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 15px; /* padding réduit */
 }
 
 /* Carte menu */
 .carte-menu {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 10px; /* radius réduit */
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    padding: 20px;
-    width: 280px;
+    padding: 15px; /* padding réduit */
+    width: 250px; /* largeur réduite */
     text-align: center;
     text-decoration: none;
     color: inherit;
     display: flex;
-    flex-direction: column; /* texte puis image */
-    gap: 10px;
+    flex-direction: column;
+    gap: 8px; /* gap réduit */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -360,13 +231,13 @@ h2{
 
 /* Texte dans les cartes */
 .details-carte h3 {
-    margin: 10px 0;
+    margin: 8px 0; /* margin réduit */
     color: #333;
-    font-size: 18px;
+    font-size: 16px; /* taille réduite */
 }
 
 .details-carte p {
-    font-size: 14px;
+    font-size: 12px; /* taille réduite */
     color: #555;
 }
 
@@ -385,9 +256,9 @@ h2{
 /* Images uniformes et plus longues */
 .carte-menu img {
     width: 100%;
-    height: 300px;        /* hauteur de l'image augmentée */
+    height: 250px; /* hauteur réduite */
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 6px; /* radius réduit */
     display: block;
     margin: 0 auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -401,12 +272,12 @@ h2{
 
 /* Pied de page */
 .pied-page {
-    background: #ffffff;
-    color: #000000;
+    background: #203a43; /* même couleur que l'en-tête */
+    color: #fff; /* texte blanc pour contraste */
     text-align: center;
-    padding: 15px;
-    font-size: 14px;
-    margin-top: 30px;
+    padding: 10px; /* padding réduit */
+    font-size: 12px; /* taille réduite */
+    margin-top: 20px; /* margin réduit */
 }
 /* fin pied de page*/
 

@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="principale.css">
     <link rel="icon" type="image/png" href="res/logo.png">
-    <!-- Font Awesome il me permet d'appeler une bibliothèque d'icone enligne d'ou son appel dans le head-->
+    <!-- Font Awesome : bibliothèque d'icônes en ligne -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
 <header class="entete">
-  <div class="logo">
+    <div class="logo">
         <img src="res/logo.png" alt="Logo GninouFood">
-  </div>
+    </div>
 
-  <div class="barre-recherche">
+    <div class="barre-recherche">
         <input type="text" placeholder="Rechercher un plat...">
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
-  </div>
+    </div>
 
-  <div class="icones-entete">
+    <div class="icones-entete">
         <!-- Case à cocher cachée -->
         <input type="checkbox" id="menu-toggle">
 
@@ -35,21 +35,25 @@
             <i class="fa-solid fa-basket-shopping"></i>
             <span class="compteur">0</span>
         </a>
+
         <!-- Menu déroulant -->
         <nav class="menu">
             <a href="#">Compte</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
         </nav>
-  </div>
+    </div>
 </header>
 
-<!-- Contenu principal -->
 <main>
     <!-- Boutons inscription / connexion -->
     <div class="inscription-connexion">
-        <button onclick="location.href='page_inscription.html'"><i class="fa-solid fa-user-plus"></i> Inscription</button>
-        <button onclick="location.href='page_connexion.html'"><i class="fa-solid fa-right-to-bracket"></i> Se connecter</button>
+        <button onclick="location.href='page_inscription.html'">
+            <i class="fa-solid fa-user-plus"></i> Inscription
+        </button>
+        <button onclick="location.href='page_connexion.html'">
+            <i class="fa-solid fa-right-to-bracket"></i> Se connecter
+        </button>
     </div>
 
     <!-- Services -->
@@ -103,7 +107,7 @@
         <div class="carte-menu">
             <div class="details-carte">
                 <h2>Sauce Bawhin</h2>
-                <h3>La sauce africaine qui fait sensation</>h3
+                <h3>La sauce africaine qui fait sensation</h3>
                 <span class="prix"><i class="fa-solid fa-tag"></i> 3 000 FCFA</span>
             </div>
             <img src="res/bawhin.jpeg" alt="Sauce Bawhin">
@@ -173,7 +177,6 @@
     </section>
 </main>
 
-<!-- Pied de page -->
 <footer class="pied-page">
     <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
 </footer>

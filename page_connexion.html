@@ -10,19 +10,24 @@
   <main>
     <div class="form-container">
       <!-- Logo -->
-      <img src="res/logo.png" alt="GNINOU FOOD" class="logo">
+      <img src="res/logo.png" alt="GNINOU_FOOD" class="logo">
       
       <!-- Titre -->
-      <h2>Connexion</h2>
+      <h1>Connexion</h1>
       
       <!-- Formulaire de connexion -->
-      <form action="traitement_connexion.php" method="post">
+      <form action="traitement_connexion.php" method="get">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Email" required>
         
         <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-        
+        <div class="password-container">
+          <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+          <button type="button" class="toggle-password" id="togglePassword">
+            <i class="fa fa-eye"></i>
+          </button>
+        </div>
+
         <button type="submit" class="btn">Se connecter</button>
       </form>
       
@@ -37,5 +42,23 @@
   <footer>
     <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
   </footer>
+
+<script>
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const icon = this.querySelector('i');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+});
+</script>
+
 </body>
 </html>

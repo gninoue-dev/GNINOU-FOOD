@@ -1,7 +1,6 @@
 /* Corps de page */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* dégradé bleu */
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,12 +10,12 @@ body {
     background-size: 400% 400%; 
     animation: neonGradient 12s ease infinite;
 }
-
 @keyframes neonGradient { 
     0% { background-position: 0% 50%; } 
     50% { background-position: 100% 50%; } 
     100% { background-position: 0% 50%; } 
 } 
+
 
 /* Zone principale */
 main {
@@ -24,7 +23,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0; /* espace haut/bas */
+    padding: 40px 0;
 }
 
 /* Conteneur du formulaire */
@@ -34,14 +33,17 @@ main {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     width: 100%;
-    max-width: 320px; /* largeur réduite */
+    max-width: 300px;
     text-align: center;
     margin: 20px auto;
+    position: relative; /* nécessaire pour l’animation */
+    z-index: 1;
+    animation: apparition 0.8s ease;
 }
 
 /* Logo */
 .logo {
-    width: 120px;
+    width: 150px;
     display: block;
     margin: 0 auto 20px auto;
 }
@@ -72,11 +74,46 @@ input {
     border-radius: 6px;
     font-size: 14px;
     transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input:focus {
     border-color: #2193b0;
     outline: none;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* Toggle pour mot de passe */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #2193b0;
+}
+
+/* Messages d'erreur */
+.error {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 /* Bouton */
@@ -93,7 +130,7 @@ input:focus {
 
 .btn:hover {
     background: #e68900;
-    transform: scale(1.05); /* augmente la taille au survol de la souris */
+    transform: scale(1.05); /* petit effet pro */
 }
 
 /* Lien de redirection */
@@ -113,25 +150,24 @@ input:focus {
 }
 
 /* Footer */
-footer {
+.pied-page {
     background: #203a43;
     color: #fff;
     text-align: center;
     padding: 15px;
     font-size: 14px;
-    margin-top: auto;
 }
 
 /* 📱 Responsivité */
 @media (max-width: 768px) {
     .form-container {
-        max-width: 80%; /* plus large sur tablette */
+        max-width: 80%;
     }
 }
 
 @media (max-width: 480px) {
     .form-container {
-        max-width: 90%; /* prend presque toute la largeur sur mobile */
+        max-width: 90%;
         padding: 15px;
     }
 
@@ -147,4 +183,10 @@ footer {
         font-size: 14px;
         padding: 10px;
     }
+}
+
+/* Animations */
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

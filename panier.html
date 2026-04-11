@@ -22,31 +22,18 @@
     <main class="conteneur-panier">
         <!-- Liste des produits -->
         <section class="articles-panier">
-            <div class="article-panier">
-                <img src="res/burger.png" alt="Burger Royal">
-                <div class="details-article">
-                    <h3>Burger Royal</h3>
-                    <p>Prix unitaire : 3000 CFA</p>
-                    <div class="controle-quantite">
-                        <button class="bouton moins">−</button>
-                        <input type="number" value="2" min="1">
-                        <button class="bouton plus">+</button>
-                    </div>
-                    <p class="total-article">Total : 6000 CFA</p>
-                </div>
-                <button class="bouton supprimer">Supprimer</button>
-            </div>
+            <div id="cart-items"></div>
         </section>
 
         <!-- Résumé de commande -->
         <aside class="resume-panier">
             <h2>Résumé de commande</h2>
-            <p class="sous-total">Sous-total : 6000 CFA</p>
-            <p class="livraison">Livraison : 1000 CFA</p>
-            <p class="total-general">Total : 7000 CFA</p>
-            <button class="bouton commander">Commander</button>
-            <button class="bouton vider">Vider le panier</button>
-            <p class="reassurance">✅ Paiement sécurisé<br>🚚 Livraison rapide<br>📞 Service client</p>
+            <p class="sous-total" id="cart-subtotal">Sous-total : 0 FCFA</p>
+            <p class="livraison" id="cart-shipping">Livraison : 0 FCFA</p>
+            <p class="total-general" id="cart-total">Total : 0 FCFA</p>
+            <button class="bouton commander" id="checkout-button">Commander</button>
+            <button class="bouton vider" id="clear-cart-button">Vider le panier</button>
+            <p class="reassurance">Paiement sécurisé<br> Livraison rapide<br> Service client</p>
         </aside>
     </main>
 

@@ -1,7 +1,6 @@
 /* Corps de page */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* dégradé bleu */
     margin: 0;
     padding: 0;
     display: flex;
@@ -39,11 +38,12 @@ main {
     margin: 20px auto;
     position: relative; /* nécessaire pour l’animation */
     z-index: 1;
+    animation: apparition 0.8s ease;
 }
 
 /* Logo */
 .logo {
-    width: 120px;
+    width: 150px;
     display: block;
     margin: 0 auto 20px auto;
 }
@@ -74,11 +74,46 @@ input {
     border-radius: 6px;
     font-size: 14px;
     transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input:focus {
     border-color: #2193b0;
     outline: none;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* Toggle pour mot de passe */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #2193b0;
+}
+
+/* Messages d'erreur */
+.error {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 /* Bouton */
@@ -115,7 +150,7 @@ input:focus {
 }
 
 /* Footer */
-footer {
+.pied-page {
     background: #203a43;
     color: #fff;
     text-align: center;
@@ -148,4 +183,10 @@ footer {
         font-size: 14px;
         padding: 10px;
     }
+}
+
+/* Animations */
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

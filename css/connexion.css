@@ -1,0 +1,196 @@
+/* ========================================
+   GNINOU_FOOD — Page Connexion
+   ======================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #7928ca, #2afeb7);
+    background-size: 400% 400%;
+    animation: neonGradient 12s ease infinite;
+    line-height: 1.6;
+}
+
+@keyframes neonGradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+* { box-sizing: border-box; }
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2));
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Zone principale */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 16px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Conteneur du formulaire */
+.form-container {
+    background: rgba(255,255,255,0.97);
+    padding: 36px 28px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+    animation: apparition 0.8s ease;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* Logo */
+.logo {
+    width: 90px;
+    display: block;
+    margin: 0 auto 16px auto;
+    border-radius: 50%;
+    border: 2px solid rgba(255,152,0,0.3);
+}
+
+/* Titre */
+h1 {
+    margin-bottom: 20px;
+    color: #1b1f3b;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+}
+
+label {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+input {
+    padding: 11px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    font-family: inherit;
+}
+
+input:focus {
+    border-color: #ff9800;
+    box-shadow: 0 0 0 3px rgba(255,152,0,0.15);
+    outline: none;
+}
+
+input::placeholder { color: #aaa; }
+
+/* Toggle mot de passe */
+.password-container { position: relative; }
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover { color: #ff9800; }
+
+/* Messages d'erreur */
+.error {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Bouton */
+.btn {
+    background: linear-gradient(120deg, #ff9800, #ffb347);
+    color: #111;
+    border: none;
+    padding: 13px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 4px;
+    letter-spacing: 0.03em;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(255,152,0,0.3);
+}
+
+/* Lien de redirection */
+.redirect {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #555;
+}
+
+.redirect a {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.redirect a:hover { text-decoration: underline; }
+
+/* Footer */
+.pied-page,
+footer {
+    background: rgba(15, 23, 42, 0.95);
+    color: #fff;
+    text-align: center;
+    padding: 18px 12px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivité */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 24px 18px;
+    }
+    h1 { font-size: 1.2rem; }
+    input, .btn { font-size: 14px; padding: 10px; }
+}

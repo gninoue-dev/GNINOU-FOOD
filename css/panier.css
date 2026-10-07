@@ -1,0 +1,294 @@
+/* ========================================
+   GNINOU_FOOD — Page Panier
+   ======================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #7928ca, #2afeb7);
+    background-size: 400% 400%;
+    animation: neonGradient 12s ease infinite;
+    line-height: 1.6;
+}
+
+@keyframes neonGradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+* { box-sizing: border-box; }
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2));
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* En-tête */
+.entete {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 26px;
+    background: rgba(15, 23, 42, 0.92);
+    color: #fff;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.entete .logo img {
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.18);
+    transition: transform 0.3s ease;
+}
+
+.entete .logo img:hover { transform: scale(1.05); }
+
+.retour-accueil a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: linear-gradient(120deg, #ff9800, #ffb347);
+    padding: 9px 18px;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.retour-accueil a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255,152,0,0.3);
+}
+
+/* Conteneur principal */
+.conteneur-panier {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 40px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Liste des articles */
+.articles-panier {
+    flex: 2;
+    background: rgba(255,255,255,0.97);
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.articles-panier h2 {
+    color: #1b1f3b;
+    text-align: left;
+    font-size: 1.2rem;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.article-panier {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(17,24,39,0.08);
+    padding-bottom: 16px;
+    gap: 14px;
+}
+
+.article-panier img {
+    width: 80px;
+    height: 80px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.details-article {
+    flex: 1;
+    margin-left: 4px;
+}
+
+.details-article h3 {
+    margin: 0 0 5px;
+    color: #1b1f3b;
+    font-size: 1rem;
+}
+
+.details-article p {
+    margin: 4px 0;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Contrôle quantité */
+.controle-quantite {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.controle-quantite input {
+    width: 50px;
+    text-align: center;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Boutons */
+.bouton {
+    background: linear-gradient(120deg, #ff9800, #ffb347);
+    color: #111;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+}
+
+.bouton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255,152,0,0.25);
+}
+
+.plus, .moins {
+    font-size: 16px;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.supprimer {
+    background: linear-gradient(120deg, #ff4444, #ff6b6b);
+    color: #fff;
+}
+
+.supprimer:hover {
+    box-shadow: 0 10px 24px rgba(255,68,68,0.3);
+}
+
+.vider {
+    background: linear-gradient(120deg, #ff4444, #ff6b6b);
+    color: #fff;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.vider:hover {
+    box-shadow: 0 10px 24px rgba(255,68,68,0.3);
+}
+
+.commander {
+    margin-top: 16px;
+    width: 100%;
+    padding: 13px;
+    font-size: 1rem;
+}
+
+/* Résumé de commande */
+.resume-panier {
+    flex: 1;
+    background: rgba(255,255,255,0.97);
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    text-align: center;
+}
+
+.resume-panier h2 {
+    color: #1b1f3b;
+    font-size: 1.2rem;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.resume-panier p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.total-general {
+    font-weight: 700;
+    font-size: 1.1rem !important;
+    color: #ff6f61 !important;
+    margin-top: 12px !important;
+    padding-top: 12px;
+    border-top: 1px solid rgba(17,24,39,0.1);
+}
+
+.reassurance {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Pied de page */
+.pied-page {
+    background: rgba(15, 23, 42, 0.95);
+    color: #fff;
+    text-align: center;
+    padding: 18px 12px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivité */
+@media (max-width: 992px) {
+    .conteneur-panier {
+        flex-direction: column;
+        align-items: center;
+    }
+    .articles-panier, .resume-panier {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteneur-panier { padding: 20px 14px; }
+    .article-panier { flex-direction: column; }
+    .article-panier img { margin-bottom: 8px; width: 100%; height: 160px; }
+    .controle-quantite { gap: 5px; }
+    .entete { padding: 14px 16px; }
+}

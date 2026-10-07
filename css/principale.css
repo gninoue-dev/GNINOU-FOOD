@@ -1,3 +1,4 @@
+
 /* Corps de page */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -6,17 +7,22 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 25%),
-                radial-gradient(circle at bottom right, rgba(255,255,255,0.12), transparent 20%),
-                linear-gradient(135deg, #23044d, #4c1d95, #ff4da6);
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #ff0080, #7928ca, #2afeb7);
+    background-size: 400% 400%;
+    animation: neonGradient 12s ease infinite;
     line-height: 1.6;
 }
-
+ 
+@keyframes neonGradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+ 
 * {
     box-sizing: border-box;
 }
-
+ 
 body::before {
     content: '';
     position: fixed;
@@ -24,30 +30,30 @@ body::before {
     background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2));
     pointer-events: none;
 }
-
+ 
 main {
     width: min(820px, calc(100% - 32px));
     margin: 0 auto 40px;
     padding-top: 20px;
 }
-
+ 
 h1, h2 {
     text-align: center;
     color: #fff;
     margin: 0;
 }
-
+ 
 h1 {
     font-size: clamp(2rem, 2.5vw, 3rem);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 24px;
 }
-
+ 
 h2 {
     font-size: 1.3rem;
 }
-
+ 
 /* En-tête */
 .entete {
     position: sticky;
@@ -63,18 +69,18 @@ h2 {
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-
+ 
 .logo img {
     width: 80px;
     border-radius: 50%;
     border: 2px solid rgba(255,255,255,0.18);
     transition: transform 0.3s ease;
 }
-
+ 
 .logo img:hover {
     transform: scale(1.05);
 }
-
+ 
 .barre-recherche {
     flex: 1;
     display: flex;
@@ -83,7 +89,7 @@ h2 {
     gap: 12px;
     max-width: 520px;
 }
-
+ 
 .barre-recherche input {
     width: 250px;
     padding: 8px;
@@ -91,13 +97,13 @@ h2 {
     border: 1px solid #ccc;
     transition: box-shadow 0.3s ease, width 0.3s ease;
 }
-
+ 
 .barre-recherche input:focus {
     box-shadow: 0 0 8px #FF9800;
     outline: none;
     width: 300px;
 }
-
+ 
 .barre-recherche button {
     display: inline-flex;
     align-items: center;
@@ -112,24 +118,24 @@ h2 {
     cursor: pointer;
     transition: transform 0.2s ease, background 0.2s ease;
 }
-
+ 
 .barre-recherche button:hover {
     background: #e68900;
     transform: scale(1.1);
 }
-
+ 
 .icone-hamburger,
 .icones-entete a {
     color: #fff;
 }
-
-/* Ajouter un peu d’espace entre le hamburger et les autres icônes */
+ 
+/* Ajouter un peu d'espace entre le hamburger et les autres icônes */
 .icone-hamburger {
     font-size: 28px;
     cursor: pointer;
     margin-right: 16px;
 }
-
+ 
 /* Cacher la case à cocher utilisée pour activer le menu hamburger */
 #menu-toggle {
     position: absolute;
@@ -138,11 +144,11 @@ h2 {
     height: 0;
     pointer-events: none;
 }
-
+ 
 .icone-hamburger:hover {
     color: #ffb347;
 }
-
+ 
 .menu {
     position: absolute;
     top: 72px;
@@ -156,47 +162,47 @@ h2 {
     transition: opacity 0.25s ease, transform 0.25s ease;
     transform: translateY(-10px);
 }
-
+ 
 #menu-toggle:checked ~ .menu {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
 }
-
+ 
 .menu a {
     padding: 12px 18px;
     color: #fff;
     display: block;
     font-size: 0.95rem;
 }
-
+ 
 .menu a:hover {
     background: rgba(255, 152, 0, 0.18);
     color: #fff;
 }
-
+ 
 .icones-entete {
     display: flex;
     align-items: center;
     gap: 18px;
     position: relative;
 }
-
+ 
 .icones-entete a {
     font-size: 28px;
     color: #fff;
     transition: transform 0.2s ease, color 0.2s ease;
 }
-
+ 
 .icones-entete a:hover {
     color: #ffb347;
     transform: scale(1.08);
 }
-
+ 
 .icone-panier {
     position: relative;
 }
-
+ 
 .compteur {
     position: absolute;
     top: -8px;
@@ -209,13 +215,13 @@ h2 {
     font-weight: 700;
     box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
-
+ 
 /* Sections */
 section + h1,
 section + h2 {
     margin-top: 40px;
 }
-
+ 
 .tableau-menu {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -223,7 +229,12 @@ section + h2 {
     padding: 10px;
     margin-bottom: 30px;
 }
-
+ 
+/* ===== MODIFICATION : 4 cartes services alignées ===== */
+.tableau-services {
+    grid-template-columns: repeat(4, 1fr);
+}
+ 
 .carte-menu {
     border: 1px solid rgba(255,255,255,0.18);
     background: rgba(255,255,255,0.95);
@@ -234,25 +245,25 @@ section + h2 {
     text-decoration: none;
     color: inherit;
 }
-
+ 
 .carte-menu h3,
 .carte-menu h2 {
     text-decoration: none;
 }
-
+ 
 .carte-menu:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.16);
     border-color: rgba(255,152,0,0.35);
 }
-
+ 
 .details-carte {
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: left;
 }
-
+ 
 .carte-footer {
     display: flex;
     align-items: center;
@@ -262,13 +273,13 @@ section + h2 {
     padding: 14px 0 0;
     border-top: 1px solid rgba(17, 24, 39, 0.1);
 }
-
+ 
 .card-info {
     font-size: 0.98rem;
     color: rgba(15, 23, 42, 0.82);
     font-weight: 700;
 }
-
+ 
 .btn-acheter {
     display: inline-flex;
     align-items: center;
@@ -284,32 +295,32 @@ section + h2 {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
-
+ 
 .btn-acheter:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 30px rgba(255, 152, 0, 0.22);
     background: linear-gradient(120deg, #ffb347, #ff9800);
 }
-
+ 
 .details-carte h2 {
     font-size: 1rem;
     color: #1b1f3b;
     margin-bottom: 0;
 }
-
+ 
 .details-carte h3 {
     font-size: 0.92rem;
     color: #4f4f5a;
     line-height: 1.4;
 }
-
+ 
 .prix {
     align-self: flex-start;
     margin-top: 6px;
     font-size: 0.95rem;
     color: #ff6f61;
 }
-
+ 
 .carte-menu img {
     width: 100%;
     height: 200px;
@@ -318,7 +329,7 @@ section + h2 {
     object-fit: cover;
     object-position: center center;
 }
-
+ 
 .inscription-connexion {
     margin-top: 24px;
     margin-bottom: 36px;
@@ -327,7 +338,7 @@ section + h2 {
     gap: 16px;
     flex-wrap: wrap;
 }
-
+ 
 .inscription-connexion button {
     min-width: 170px;
     padding: 14px 32px;
@@ -339,29 +350,29 @@ section + h2 {
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
 }
-
+ 
 .inscription-connexion button:first-child {
     background: linear-gradient(120deg, #ff9800, #ffb347);
     color: #111;
     border-color: rgba(255, 152, 0, 0.24);
 }
-
+ 
 .inscription-connexion button:last-child {
     background: rgba(255, 255, 255, 0.98);
     color: #121212;
     border-color: rgba(255, 255, 255, 0.55);
 }
-
+ 
 .inscription-connexion button:hover {
     transform: translateY(-2px);
     box-shadow: 0 20px 36px rgba(0, 0, 0, 0.18);
 }
-
+ 
 .inscription-connexion button:last-child:hover {
     background: rgba(255, 255, 255, 1);
     border-color: rgba(255, 255, 255, 0.9);
 }
-
+ 
 /* Pied de page */
 .pied-page {
     background: rgba(15, 23, 42, 0.95);
@@ -372,61 +383,66 @@ section + h2 {
     margin-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.08);
 }
-
+ 
 /* Animations globales */
 @keyframes apparition {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
+ 
 h1, h2 {
     animation: apparition 0.8s ease;
 }
-
+ 
 /* Responsivité */
 @media (max-width: 900px) {
     .entete {
         flex-wrap: wrap;
         justify-content: center;
     }
-
+ 
     .barre-recherche {
         width: 100%;
     }
-
+ 
     .barre-recherche input {
         width: 100%;
     }
 }
-
+ 
 @media (max-width: 620px) {
     .entete {
         padding: 14px 16px;
     }
-
+ 
     .icones-entete {
         gap: 12px;
     }
-
-
+ 
     .carte-menu {
         padding: 16px;
     }
-
+ 
     .carte-menu img {
         width: 100%;
         height: 180px;
         object-fit: cover;
         object-position: center center;
     }
-
+ 
     .inscription-connexion {
         flex-direction: column;
         gap: 12px;
     }
-
+ 
     .inscription-connexion button {
         width: 100%;
         max-width: 340px;
     }
+ 
+    /* ===== MODIFICATION responsive : 2 colonnes sur mobile ===== */
+    .tableau-services {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+ 

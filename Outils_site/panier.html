@@ -1,52 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
-  <title>Panier - GNINOU_FOOD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/panier.css">
+  <title>Mon panier — GNINOU_FOOD</title>
   <link rel="icon" type="image/png" href="../res/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/commun.css">
+  <link rel="stylesheet" href="../css/panier.css">
+  <script>try { var t = JSON.parse(localStorage.getItem('gf.theme')); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
-<body>
 
-  <header class="entete">
-    <div class="logo">
-      <img src="../res/logo.png" alt="GNINOU FOOD">
-    </div>
-    <nav class="retour-accueil">
-      <a href="../Page.principale.html"><i class="fa-solid fa-home"></i> Accueil</a>
-    </nav>
-  </header>
+<body data-racine="../" data-page="panier">
 
-  <main class="conteneur-panier">
-    <section class="articles-panier">
-      <h2><i class="fa-solid fa-basket-shopping"></i> Mon Panier</h2>
-      <div id="cart-items"></div>
-    </section>
-
-    <aside class="resume-panier">
-      <h2>Résumé</h2>
-      <p class="sous-total" id="cart-subtotal">Sous-total : 0 FCFA</p>
-      <p class="livraison" id="cart-shipping">Livraison : 0 FCFA</p>
-      <p class="total-general" id="cart-total">Total : 0 FCFA</p>
-      <button class="bouton commander" id="checkout-button">
-        <i class="fa-solid fa-check"></i> Commander
-      </button>
-      <button class="bouton vider" id="clear-cart-button">
-        <i class="fa-solid fa-trash"></i> Vider le panier
-      </button>
-      <p class="reassurance">
-        🔒 Paiement sécurisé<br>
-        🚀 Livraison rapide<br>
-        💬 Service client disponible
-      </p>
-    </aside>
+  <main id="contenu" class="conteneur page-panier">
+    <h1 class="titre-page"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i> Mon panier</h1>
+    <div id="contenuPanier"></div>
   </main>
 
-  <footer class="pied-page">
-    <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
-  </footer>
-
+  <script src="../js/donnees.js"></script>
+  <script src="../js/commun.js"></script>
+  <script src="../js/panier-page.js"></script>
 </body>
+
 </html>

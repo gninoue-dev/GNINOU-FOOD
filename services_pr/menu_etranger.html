@@ -1,145 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
-  <title>Menu Plats Étrangers - GNINOU_FOOD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/commun.css">
+  <title>Plats Étrangers — GNINOU_FOOD</title>
+  <meta name="description" content="Plats Étrangers : commande en ligne et livraison à Abidjan avec GNINOU_FOOD.">
   <link rel="icon" type="image/png" href="../res/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/commun.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <script>try { var t = JSON.parse(localStorage.getItem('gf.theme')); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
-<body>
 
-  <header class="entete">
-    <div class="logo">
-      <img src="../res/logo.png" alt="Logo GninouFood">
+<!-- Page générée à partir de js/donnees.js par js/menu.js -->
+<body data-racine="../" data-page="menu-etranger" data-categorie="etranger">
+
+  <main id="contenu">
+    <section class="banniere-menu" id="banniereMenu"></section>
+
+    <div class="conteneur">
+      <nav class="onglets-menus" id="ongletsMenus" aria-label="Autres menus"></nav>
+
+      <div class="barre-outils" role="search">
+        <div class="filtre-recherche">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <label for="filtreTexte" class="visuellement-cache">Filtrer ce menu</label>
+          <input type="search" id="filtreTexte" placeholder="Filtrer ce menu...">
+        </div>
+        <div class="filtres-tags" id="filtresTags" role="group" aria-label="Filtres"></div>
+        <div class="filtre-prix">
+          <label for="filtrePrix">Prix max : <strong id="valeurPrix"></strong></label>
+          <input type="range" id="filtrePrix" step="500">
+        </div>
+        <div class="filtre-tri">
+          <label for="filtreTri" class="visuellement-cache">Trier</label>
+          <select id="filtreTri">
+            <option value="defaut">Notre sélection</option>
+            <option value="prix-croissant">Prix croissant</option>
+            <option value="prix-decroissant">Prix décroissant</option>
+            <option value="nom">De A à Z</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="compte-resultats" id="compteResultats" aria-live="polite"></p>
+      <div class="grille-plats" id="grilleMenu"></div>
     </div>
-    <nav>
-      <a href="../Page.principale.html"><i class="fa-solid fa-home"></i> Accueil</a>
-      <a href="../Outils_site/panier.html" class="cart-pill">
-        <i class="fa-solid fa-basket-shopping"></i> Panier <span class="cart-count">0</span>
-      </a>
-    </nav>
-  </header>
-
-  <main>
-    <h1 class="titre-section">🌍 Plats Étrangers</h1>
-    <section class="menu-tableau">
-
-      <div class="carte-plat">
-        <img src="../res/images/pizza.png" alt="Pizza Margherita">
-        <div class="details-plat">
-          <h3>Pizza Margherita</h3>
-          <p>Pizza italienne classique avec tomate, mozzarella et basilic.</p>
-          <span class="prix">4 000 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/sushi.png" alt="Sushi Assortiment">
-        <div class="details-plat">
-          <h3>Sushi Assortiment</h3>
-          <p>Assortiment de sushi japonais frais.</p>
-          <span class="prix">5 500 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/tacos.png" alt="Tacos Mexicains">
-        <div class="details-plat">
-          <h3>Tacos Mexicains</h3>
-          <p>Tortillas garnies de viande, légumes et sauce épicée.</p>
-          <span class="prix">3 500 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/paella.png" alt="Paella Espagnole">
-        <div class="details-plat">
-          <h3>Paella Espagnole</h3>
-          <p>Riz safrané aux fruits de mer et légumes.</p>
-          <span class="prix">6 000 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/burger.png" alt="Burger Américain">
-        <div class="details-plat">
-          <h3>Burger Américain</h3>
-          <p>Burger classique avec steak, fromage et frites.</p>
-          <span class="prix">4 500 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/chowmein.png" alt="Chow Mein Chinois">
-        <div class="details-plat">
-          <h3>Chow Mein Chinois</h3>
-          <p>Nouilles sautées aux légumes et poulet.</p>
-          <span class="prix">3 800 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/curry.png" alt="Curry Indien">
-        <div class="details-plat">
-          <h3>Curry Indien</h3>
-          <p>Curry parfumé au poulet et riz basmati.</p>
-          <span class="prix">4 200 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/kebab.png" alt="Kebab Turc">
-        <div class="details-plat">
-          <h3>Kebab Turc</h3>
-          <p>Viande grillée servie avec pain pita et légumes.</p>
-          <span class="prix">3 700 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/falafel.png" alt="Falafel Libanais">
-        <div class="details-plat">
-          <h3>Falafel Libanais</h3>
-          <p>Boulettes de pois chiches servies avec houmous.</p>
-          <span class="prix">3 000 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/schnitzel.png" alt="Schnitzel Allemand">
-        <div class="details-plat">
-          <h3>Schnitzel Allemand</h3>
-          <p>Escalope panée servie avec pommes de terre.</p>
-          <span class="prix">4 800 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/ramen.png" alt="Ramen Japonais">
-        <div class="details-plat">
-          <h3>Ramen Japonais</h3>
-          <p>Nouilles servies dans un bouillon parfumé avec porc, œuf et algues.</p>
-          <span class="prix">4 200 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/images/tempura.png" alt="Tempura Japonais">
-        <div class="details-plat">
-          <h3>Tempura Japonais</h3>
-          <p>Beignets légers de crevettes et légumes croustillants.</p>
-          <span class="prix">3 800 FCFA</span>
-        </div>
-      </div>
-
-    </section>
   </main>
 
-  <footer class="pied-page">
-    <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
-  </footer>
-
+  <script src="../js/donnees.js"></script>
+  <script src="../js/commun.js"></script>
+  <script src="../js/menu.js"></script>
 </body>
+
 </html>

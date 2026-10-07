@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GNINOU_FOOD — Les saveurs de chez toi, livrées en un clic</title>
+  <meta name="description" content="GNINOU_FOOD : plats ivoiriens, plats du monde, douceurs et boissons livrés partout à Abidjan.">
+  <link rel="icon" type="image/png" href="res/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/commun.css">
+  <link rel="stylesheet" href="css/principale.css">
+  <script>try { var t = JSON.parse(localStorage.getItem('gf.theme')); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+
+<body data-page="accueil">
+
+  <main id="contenu">
+
+    <!-- ACCUEIL -->
+    <section class="hero">
+      <div class="conteneur hero-grille">
+        <div class="hero-texte">
+          <p class="hero-badge"><i class="fa-solid fa-fire" aria-hidden="true"></i> Le maquis livré chez toi, partout à Abidjan</p>
+          <h1>Les saveurs de chez toi, <span class="surligne">livrées en un clic</span></h1>
+          <p class="hero-sous-titre">Garba, attiéké, kedjenou, ramen, douceurs et jus frais : commande en quelques secondes, on s'occupe du reste.</p>
+          <div class="hero-actions">
+            <a href="services_pr/menu_local.html" class="bouton bouton-principal bouton-grand"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Commander maintenant</a>
+            <a href="#plats-du-jour" class="bouton bouton-secondaire bouton-grand">Plats du jour</a>
+          </div>
+          <ul class="hero-chiffres" id="heroChiffres"></ul>
+        </div>
+
+        <div class="hero-visuel" aria-hidden="true">
+          <div class="hero-assiette hero-assiette-1"><img src="res/garba.jpeg" alt=""></div>
+          <div class="hero-assiette hero-assiette-2"><img src="res/attiekepoisson.jpeg" alt=""></div>
+          <div class="hero-assiette hero-assiette-3"><img src="res/plats_japonais.png" alt=""></div>
+          <span class="hero-etiquette hero-etiquette-1"><i class="fa-solid fa-motorcycle"></i> 30-45 min</span>
+          <span class="hero-etiquette hero-etiquette-2"><i class="fa-solid fa-star"></i> Fait maison</span>
+          <span class="hero-sticker">Chaud<br>chaud&nbsp;!</span>
+          <span class="hero-forme hero-forme-1"></span>
+          <span class="hero-forme hero-forme-2"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDEAU DÉFILANT -->
+    <div class="bandeau" aria-hidden="true">
+      <div class="bandeau-piste">
+        <span>Garba</span><i class="fa-solid fa-star"></i><span>Alloco</span><i class="fa-solid fa-star"></i><span>Attiéké poisson</span><i class="fa-solid fa-star"></i><span>Kedjenou</span><i class="fa-solid fa-star"></i><span>Foutou</span><i class="fa-solid fa-star"></i><span>Placali</span><i class="fa-solid fa-star"></i><span>Bissap glacé</span><i class="fa-solid fa-star"></i><span>Gbofloto</span><i class="fa-solid fa-star"></i>
+        <span>Garba</span><i class="fa-solid fa-star"></i><span>Alloco</span><i class="fa-solid fa-star"></i><span>Attiéké poisson</span><i class="fa-solid fa-star"></i><span>Kedjenou</span><i class="fa-solid fa-star"></i><span>Foutou</span><i class="fa-solid fa-star"></i><span>Placali</span><i class="fa-solid fa-star"></i><span>Bissap glacé</span><i class="fa-solid fa-star"></i><span>Gbofloto</span><i class="fa-solid fa-star"></i>
+      </div>
+    </div>
+
+    <!-- CATÉGORIES (NOS SERVICES) -->
+    <section class="section" id="services">
+      <div class="conteneur">
+        <div class="titre-section apparition">
+          <p class="sur-titre"><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Nos services</p>
+          <h2>Quatre univers, une seule envie</h2>
+          <p>Choisis ton menu : on te livre le meilleur de chaque cuisine.</p>
+        </div>
+        <div class="grille-categories" id="grilleCategories"></div>
+      </div>
+    </section>
+
+    <!-- PLATS DU JOUR -->
+    <section class="section section-alt" id="plats-du-jour">
+      <div class="conteneur">
+        <div class="entete-carrousel apparition">
+          <div class="titre-section titre-gauche">
+            <p class="sur-titre"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i> Aujourd'hui</p>
+            <h2>Les plats du jour</h2>
+          </div>
+          <div class="fleches-carrousel">
+            <button class="bouton-icone" data-defiler="-1" aria-label="Plats précédents"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+            <button class="bouton-icone" data-defiler="1" aria-label="Plats suivants"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <div class="carrousel" id="carrouselDuJour" tabindex="0" aria-label="Plats du jour, faire défiler horizontalement"></div>
+      </div>
+    </section>
+
+    <!-- FAVORIS (si l'utilisateur en a) -->
+    <section class="section" id="sectionFavoris" hidden>
+      <div class="conteneur">
+        <div class="titre-section apparition">
+          <p class="sur-titre"><i class="fa-solid fa-heart" aria-hidden="true"></i> Pour toi</p>
+          <h2>Tes favoris</h2>
+        </div>
+        <div class="grille-plats" id="grilleFavoris"></div>
+      </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section class="section" id="etapes">
+      <div class="conteneur">
+        <div class="titre-section apparition">
+          <p class="sur-titre"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> Simple et rapide</p>
+          <h2>Comment ça marche ?</h2>
+        </div>
+        <ol class="etapes">
+          <li class="etape apparition" style="--delai:0s">
+            <span class="etape-icone"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+            <h3>Choisis tes plats</h3>
+            <p>Parcours nos 4 menus ou cherche directement ton plat préféré.</p>
+          </li>
+          <li class="etape apparition" style="--delai:.12s">
+            <span class="etape-icone"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i></span>
+            <h3>Valide ton panier</h3>
+            <p>Indique ta commune et ton adresse, puis choisis ton moyen de paiement.</p>
+          </li>
+          <li class="etape apparition" style="--delai:.24s">
+            <span class="etape-icone"><i class="fa-solid fa-motorcycle" aria-hidden="true"></i></span>
+            <h3>Régale-toi</h3>
+            <p>Suis ta commande en direct jusqu'à ta porte. Bon appétit !</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- LIVRAISON -->
+    <section class="section section-alt" id="livraison">
+      <div class="conteneur livraison-grille">
+        <div class="apparition">
+          <div class="titre-section titre-gauche">
+            <p class="sur-titre"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Zones de livraison</p>
+            <h2>On livre chez toi ?</h2>
+            <p>Choisis ta commune pour connaître les frais et le délai de livraison.</p>
+          </div>
+          <div class="champ">
+            <label for="choixZone">Ma commune</label>
+            <select id="choixZone"></select>
+          </div>
+          <div class="resultat-zone" id="resultatZone" aria-live="polite"></div>
+        </div>
+        <div class="carte-promo apparition" style="--delai:.15s">
+          <i class="fa-solid fa-gift carte-promo-icone" aria-hidden="true"></i>
+          <p class="carte-promo-sur">Première commande ?</p>
+          <p class="carte-promo-titre"><strong id="promoPourcentage"></strong> de réduction</p>
+          <p>avec le code</p>
+          <button class="code-promo" id="boutonCodePromo" aria-label="Copier le code promo"><span id="codePromo"></span> <i class="fa-regular fa-copy" aria-hidden="true"></i></button>
+          <p class="carte-promo-note" id="promoLivraison"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="conteneur contact-grille">
+        <div class="apparition">
+          <div class="titre-section titre-gauche">
+            <p class="sur-titre"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</p>
+            <h2>Une question, une commande spéciale ?</h2>
+            <p>Événement, anniversaire, commande en grande quantité : écris-nous, on te répond vite.</p>
+          </div>
+          <ul class="contact-infos" id="contactInfos"></ul>
+        </div>
+        <form class="carte-formulaire apparition" id="formulaireContact" novalidate style="--delai:.15s">
+          <div class="champ">
+            <label for="contactNom">Nom</label>
+            <input type="text" id="contactNom" name="nom" autocomplete="name" required>
+            <p class="champ-erreur" id="erreurContactNom"></p>
+          </div>
+          <div class="champ">
+            <label for="contactSujet">Sujet</label>
+            <select id="contactSujet" name="sujet">
+              <option>Question sur une commande</option>
+              <option>Commande pour un événement</option>
+              <option>Partenariat</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+            <p class="champ-erreur" id="erreurContactMessage"></p>
+          </div>
+          <button type="submit" class="bouton bouton-principal bouton-large"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Envoyer par email</button>
+          <p class="champ-aide">Ton application email s'ouvre avec le message prêt à partir.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/donnees.js"></script>
+  <script src="js/commun.js"></script>
+  <script src="js/accueil.js"></script>
+</body>
+
+</html>

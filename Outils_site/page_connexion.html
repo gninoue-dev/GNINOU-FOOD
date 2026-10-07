@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
-  <title>Connexion - GNINOU_FOOD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/connexion.css">
+  <title>Connexion — GNINOU_FOOD</title>
   <link rel="icon" type="image/png" href="../res/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/commun.css">
+  <link rel="stylesheet" href="../css/compte.css">
+  <script>try { var t = JSON.parse(localStorage.getItem('gf.theme')); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
-<body>
-  <main>
-    <div class="form-container">
-      <img src="../res/logo.png" alt="GNINOU_FOOD" class="logo">
-      <h1>Connexion</h1>
 
-      <form action="traitement_connexion.php" method="get">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
+<body data-racine="../" data-page="connexion">
 
-        <label for="password">Mot de passe</label>
-        <div class="password-container">
-          <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-          <button type="button" class="toggle-password" id="togglePassword">
-            <i class="fa fa-eye"></i>
-          </button>
-        </div>
-
-        <button type="submit" class="btn">Se connecter</button>
-      </form>
-
-      <p class="redirect">
-        Pas encore inscrit ? <a href="page_inscription.html">Créez un compte</a>
-      </p>
-      <p class="redirect">
-        <a href="../Page.principale.html">← Retour à l'accueil</a>
-      </p>
+  <main id="contenu" class="conteneur page-auth">
+    <div class="auth">
+      <div class="auth-visuel" aria-hidden="true">
+        <img src="../res/garba.jpeg" alt="" class="auth-photo auth-photo-1">
+        <img src="../res/res_localmenu/allocopoulet.jpeg" alt="" class="auth-photo auth-photo-2">
+        <img src="../res/jusbissap.jpeg" alt="" class="auth-photo auth-photo-3">
+        <p class="auth-slogan">Ça fait plaisir de te revoir !</p>
+      </div>
+      <div class="auth-formulaire">
+        <h1>Connexion</h1>
+        <p class="auth-intro">Retrouve tes commandes, tes favoris et ton adresse enregistrée.</p>
+        <form id="formulaireConnexion" novalidate>
+          <div class="champ" id="bloc-email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="exemple@gmail.com" required>
+            
+            <p class="champ-erreur" id="erreur-email"></p>
+          </div>
+          <div class="champ" id="bloc-motDePasse">
+            <label for="motDePasse">Mot de passe</label>
+            <div class="champ-mot-de-passe">
+              <input type="password" id="motDePasse" name="motDePasse" autocomplete="current-password" required>
+              <button type="button" class="voir-mot-de-passe" data-voir-mdp="motDePasse" aria-label="Afficher le mot de passe" aria-pressed="false"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+            </div>
+            <p class="champ-erreur" id="erreur-motDePasse"></p>
+          </div>
+          <p class="message-formulaire" id="messageFormulaire" role="alert"></p>
+          <button type="submit" class="bouton bouton-principal bouton-large"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Se connecter</button>
+        </form>
+        <p class="auth-lien">Pas encore de compte ? <a href="page_inscription.html" id="lienAutre">Crée ton compte</a></p>
+        <p class="auth-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Site de démonstration : ton compte est enregistré uniquement dans ce navigateur.</p>
+      </div>
     </div>
   </main>
 
-  <footer class="pied-page">
-    <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
-  </footer>
-
-  <script>
-    document.getElementById('togglePassword').addEventListener('click', function () {
-      const passwordInput = document.getElementById('password');
-      const icon = this.querySelector('i');
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        icon.classList.replace('fa-eye', 'fa-eye-slash');
-      } else {
-        passwordInput.type = 'password';
-        icon.classList.replace('fa-eye-slash', 'fa-eye');
-      }
-    });
-  </script>
+  <script src="../js/donnees.js"></script>
+  <script src="../js/commun.js"></script>
+  <script src="../js/connexion.js"></script>
 </body>
+
 </html>

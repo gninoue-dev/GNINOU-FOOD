@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
-  <title>Inscription - GNINOU_FOOD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/inscription.css">
+  <title>Inscription — GNINOU_FOOD</title>
   <link rel="icon" type="image/png" href="../res/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/commun.css">
+  <link rel="stylesheet" href="../css/compte.css">
+  <script>try { var t = JSON.parse(localStorage.getItem('gf.theme')); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
-<body>
-  <main>
-    <div class="form-container">
-      <img src="../res/logo.png" alt="GNINOU_FOOD" class="logo">
-      <h1>Inscription</h1>
 
-      <form action="#" method="get">
-        <label for="username">Nom d'utilisateur</label>
-        <input type="text" id="username" name="username" placeholder="Gninoue" required>
+<body data-racine="../" data-page="inscription">
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
-
-        <label for="password">Mot de passe</label>
-        <div class="password-container">
-          <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-          <button type="button" class="toggle-password" id="togglePassword">
-            <i class="fa fa-eye"></i>
-          </button>
-        </div>
-
-        <button type="submit" class="btn">S'inscrire</button>
-      </form>
-
-      <p class="redirect">
-        Déjà inscrit ? <a href="page_connexion.html">Connectez-vous</a>
-      </p>
-      <p class="redirect">
-        <a href="../Page.principale.html">← Retour à l'accueil</a>
-      </p>
+  <main id="contenu" class="conteneur page-auth">
+    <div class="auth">
+      <div class="auth-visuel" aria-hidden="true">
+        <img src="../res/garba.jpeg" alt="" class="auth-photo auth-photo-1">
+        <img src="../res/res_localmenu/allocopoulet.jpeg" alt="" class="auth-photo auth-photo-2">
+        <img src="../res/jusbissap.jpeg" alt="" class="auth-photo auth-photo-3">
+        <p class="auth-slogan">Bienvenue dans la famille !</p>
+      </div>
+      <div class="auth-formulaire">
+        <h1>Créer mon compte</h1>
+        <p class="auth-intro">Commande plus vite, suis tes livraisons et garde tes plats favoris.</p>
+        <form id="formulaireInscription" novalidate>
+          <div class="champ" id="bloc-nom">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" name="nom" autocomplete="name" placeholder="Gninoue Jean-Marc" required>
+            
+            <p class="champ-erreur" id="erreur-nom"></p>
+          </div>
+          <div class="champ" id="bloc-email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="exemple@gmail.com" required>
+            
+            <p class="champ-erreur" id="erreur-email"></p>
+          </div>
+          <div class="champ" id="bloc-telephone">
+            <label for="telephone">Téléphone <small>(facultatif)</small></label>
+            <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="07 00 00 00 00" >
+            
+            <p class="champ-erreur" id="erreur-telephone"></p>
+          </div>
+          <div class="champ" id="bloc-motDePasse">
+            <label for="motDePasse">Mot de passe</label>
+            <div class="champ-mot-de-passe">
+              <input type="password" id="motDePasse" name="motDePasse" autocomplete="new-password" required>
+              <button type="button" class="voir-mot-de-passe" data-voir-mdp="motDePasse" aria-label="Afficher le mot de passe" aria-pressed="false"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+            </div>
+            <div class="force" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <p class="champ-aide" id="aideForce">8 caractères minimum, avec un chiffre.</p>
+            <p class="champ-erreur" id="erreur-motDePasse"></p>
+          </div>
+          <div class="champ" id="bloc-confirmation">
+            <label for="confirmation">Confirme le mot de passe</label>
+            <div class="champ-mot-de-passe">
+              <input type="password" id="confirmation" name="confirmation" autocomplete="new-password" required>
+              <button type="button" class="voir-mot-de-passe" data-voir-mdp="confirmation" aria-label="Afficher le mot de passe" aria-pressed="false"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+            </div>
+            <p class="champ-erreur" id="erreur-confirmation"></p>
+          </div>
+          <p class="message-formulaire" id="messageFormulaire" role="alert"></p>
+          <button type="submit" class="bouton bouton-principal bouton-large"><i class="fa-solid fa-user-plus" aria-hidden="true"></i> Créer mon compte</button>
+        </form>
+        <p class="auth-lien">Déjà inscrit ? <a href="page_connexion.html" id="lienAutre">Connecte-toi</a></p>
+        <p class="auth-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Site de démonstration : ton compte est enregistré uniquement dans ce navigateur.</p>
+      </div>
     </div>
   </main>
 
-  <footer class="pied-page">
-    <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
-  </footer>
-
-  <script>
-    document.getElementById('togglePassword').addEventListener('click', function () {
-      const passwordInput = document.getElementById('password');
-      const icon = this.querySelector('i');
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        icon.classList.replace('fa-eye', 'fa-eye-slash');
-      } else {
-        passwordInput.type = 'password';
-        icon.classList.replace('fa-eye-slash', 'fa-eye');
-      }
-    });
-  </script>
+  <script src="../js/donnees.js"></script>
+  <script src="../js/commun.js"></script>
+  <script src="../js/connexion.js"></script>
 </body>
+
 </html>

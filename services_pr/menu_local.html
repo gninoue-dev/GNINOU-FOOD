@@ -1,131 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
-  <title>Menu Local - GNINOU_FOOD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/commun.css">
+  <title>Plats Ivoiriens — GNINOU_FOOD</title>
+  <meta name="description" content="Plats Ivoiriens : commande en ligne et livraison à Abidjan avec GNINOU_FOOD.">
   <link rel="icon" type="image/png" href="../res/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/commun.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <script>try { var t = JSON.parse(localStorage.getItem('gf.theme')); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
-<body>
 
-  <header class="entete">
-    <div class="logo">
-      <img src="../res/logo.png" alt="Logo GninouFood">
+<!-- Page générée à partir de js/donnees.js par js/menu.js -->
+<body data-racine="../" data-page="menu-local" data-categorie="local">
+
+  <main id="contenu">
+    <section class="banniere-menu" id="banniereMenu"></section>
+
+    <div class="conteneur">
+      <nav class="onglets-menus" id="ongletsMenus" aria-label="Autres menus"></nav>
+
+      <div class="barre-outils" role="search">
+        <div class="filtre-recherche">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <label for="filtreTexte" class="visuellement-cache">Filtrer ce menu</label>
+          <input type="search" id="filtreTexte" placeholder="Filtrer ce menu...">
+        </div>
+        <div class="filtres-tags" id="filtresTags" role="group" aria-label="Filtres"></div>
+        <div class="filtre-prix">
+          <label for="filtrePrix">Prix max : <strong id="valeurPrix"></strong></label>
+          <input type="range" id="filtrePrix" step="500">
+        </div>
+        <div class="filtre-tri">
+          <label for="filtreTri" class="visuellement-cache">Trier</label>
+          <select id="filtreTri">
+            <option value="defaut">Notre sélection</option>
+            <option value="prix-croissant">Prix croissant</option>
+            <option value="prix-decroissant">Prix décroissant</option>
+            <option value="nom">De A à Z</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="compte-resultats" id="compteResultats" aria-live="polite"></p>
+      <div class="grille-plats" id="grilleMenu"></div>
     </div>
-    <div class="barre-recherche">
-      <input id="search-input" type="text" placeholder="Rechercher un plat...">
-    </div>
-    <nav>
-      <a href="../Page.principale.html"><i class="fa-solid fa-home"></i> Accueil</a>
-      <a href="../Outils_site/panier.html" class="cart-pill">
-        <i class="fa-solid fa-basket-shopping"></i> Panier <span class="cart-count">0</span>
-      </a>
-    </nav>
-  </header>
-
-  <main>
-    <h1 class="titre-section">🍽️ Plats Ivoiriens</h1>
-    <section class="menu-tableau">
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/attieképoisson.jpeg" alt="Attiéké poisson">
-        <div class="details-plat">
-          <h3>Attiéké Poisson</h3>
-          <p>Poisson braisé accompagné d'attiéké et légumes frais.</p>
-          <span class="prix">3 500 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/allocopoulet.jpeg" alt="Alloco poulet">
-        <div class="details-plat">
-          <h3>Alloco Poulet</h3>
-          <p>Poulet grillé servi avec alloco croustillant.</p>
-          <span class="prix">3 000 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/saucemanioc.jpeg" alt="Sauce Bawhin">
-        <div class="details-plat">
-          <h3>Sauce Bawhin</h3>
-          <p>La sauce africaine qui fait sensation.</p>
-          <span class="prix">3 000 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/kedjenoupoulet.jpeg" alt="Kedjenou de poulet">
-        <div class="details-plat">
-          <h3>Kedjenou de Poulet</h3>
-          <p>Poulet mijoté aux légumes dans une sauce parfumée.</p>
-          <span class="prix">4 000 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/foutou.jpeg" alt="Foutou banane">
-        <div class="details-plat">
-          <h3>Foutou Banane</h3>
-          <p>Foutou accompagné de sauce graine.</p>
-          <span class="prix">3 500 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/placaliavegombo.jpeg" alt="Placali sauce gombo">
-        <div class="details-plat">
-          <h3>Placali Sauce Gombo</h3>
-          <p>Placali servi avec sauce gombo et poisson fumé.</p>
-          <span class="prix">3 000 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/riz gras.jpeg" alt="Riz gras">
-        <div class="details-plat">
-          <h3>Riz Gras</h3>
-          <p>Riz parfumé à la tomate et viande.</p>
-          <span class="prix">2 500 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/garba2.jpeg" alt="Garba">
-        <div class="details-plat">
-          <h3>Garba</h3>
-          <p>Semoule de manioc servie avec thon frit.</p>
-          <span class="prix">1 500 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/Sauce_arachide.jpeg" alt="Sauce arachide">
-        <div class="details-plat">
-          <h3>Sauce Arachide</h3>
-          <p>Délicieuse sauce aux arachides servie avec riz.</p>
-          <span class="prix">3 000 FCFA</span>
-        </div>
-      </div>
-
-      <div class="carte-plat">
-        <img src="../res/res_localmenu/tieboudien.jpeg" alt="Tiep bou dien">
-        <div class="details-plat">
-          <h3>Tiep Bou Dien</h3>
-          <p>Riz au poisson sénégalais, riche en saveurs.</p>
-          <span class="prix">4 000 FCFA</span>
-        </div>
-      </div>
-
-    </section>
   </main>
 
-  <footer class="pied-page">
-    <p>&copy; 2026 GNINOU_FOOD - Tous droits réservés</p>
-    <p>Contact : info@gninoufood.com</p>
-  </footer>
-
+  <script src="../js/donnees.js"></script>
+  <script src="../js/commun.js"></script>
+  <script src="../js/menu.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,143 @@
+/* ============================================
+   GNINOU_FOOD — Pages menus
+   ============================================ */
+.banniere-menu{
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  isolation: isolate;
+}
+.banniere-image{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; animation: zoomLent 18s ease-in-out infinite alternate; }
+@keyframes zoomLent{ to{ transform: scale(1.1); } }
+.banniere-voile{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(15,8,6,.9) 0%, rgba(15,8,6,.55) 55%, transparent 100%),
+    linear-gradient(0deg, color-mix(in srgb, var(--couleur-categorie) 55%, transparent), transparent 60%);
+}
+.banniere-recherche{ min-height: 220px; background-color: var(--encre); background-image: var(--motif-wax); }
+.banniere-contenu{ padding: 60px 0 46px; }
+.banniere-sur{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(6px);
+  font-weight: 800;
+}
+.banniere-contenu h1{ font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; line-height: 1; text-shadow: 0 4px 20px rgba(0,0,0,.4); }
+.banniere-contenu > p:last-child{ margin: 10px 0 0; font-size: 1.15rem; max-width: 560px; opacity: .92; }
+
+/* ---------- Onglets ---------- */
+.onglets-menus{
+  display: flex;
+  gap: 10px;
+  margin: -28px 0 28px;
+  padding: 8px;
+  overflow-x: auto;
+  position: relative;
+  z-index: 2;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--ombre-forte);
+  scrollbar-width: none;
+}
+.onglet-menu{
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: var(--police-titre);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s, color .2s;
+}
+.onglet-menu i{ color: var(--couleur-categorie); }
+.onglet-menu:hover{ background: var(--surface-2); }
+.onglet-menu.actif{ background: var(--couleur-categorie); color: #fff; }
+.onglet-menu.actif i{ color: #fff; }
+
+/* ---------- Barre d'outils ---------- */
+.barre-outils{
+  position: sticky;
+  top: calc(var(--hauteur-entete) + 4px);
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--bordure);
+}
+.filtre-recherche{ position: relative; flex: 1 1 220px; }
+.filtre-recherche i{ position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--texte-doux); }
+.filtre-recherche input{
+  width: 100%;
+  height: 44px;
+  padding: 0 14px 0 40px;
+  border: 2px solid var(--bordure);
+  border-radius: 999px;
+  background: var(--surface-2);
+  outline: none;
+}
+.filtre-recherche input:focus{ border-color: var(--rouge); }
+.filtres-tags{ display: flex; flex-wrap: wrap; gap: 8px; }
+.puce-filtre{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 2px solid var(--bordure);
+  border-radius: 999px;
+  background: var(--surface);
+  font-weight: 800;
+  font-size: .88rem;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.puce-filtre:hover{ border-color: var(--orange); }
+.puce-filtre.actif{ background: var(--encre); border-color: var(--encre); color: #fff; }
+[data-theme="sombre"] .puce-filtre.actif{ background: var(--jaune); border-color: var(--jaune); color: #1C1412; }
+.filtre-prix{ display: flex; flex-direction: column; gap: 2px; min-width: 190px; font-size: .88rem; font-weight: 700; }
+.filtre-prix strong{ color: var(--rouge); }
+.filtre-prix input{ accent-color: var(--rouge); width: 100%; }
+.filtre-tri select{
+  height: 44px;
+  padding: 0 14px;
+  border: 2px solid var(--bordure);
+  border-radius: 999px;
+  background: var(--surface);
+  font-weight: 700;
+  cursor: pointer;
+}
+.compte-resultats{ margin: 0 0 18px; color: var(--texte-doux); font-weight: 700; }
+.etat-vide-large{ grid-column: 1 / -1; padding: 60px 20px; }
+
+.entree-carte{ animation: entreeCarte .5s var(--courbe) backwards; animation-delay: var(--delai, 0ms); }
+@keyframes entreeCarte{ from{ opacity: 0; transform: translateY(18px) scale(.98); } }
+
+@media (max-width: 760px){
+  .barre-outils{ position: static; }
+  .onglets-menus{ border-radius: 20px; }
+  .onglet-menu{ flex: 0 0 auto; }
+  .filtre-prix, .filtre-tri{ flex: 1 1 140px; }
+  .filtre-tri select{ width: 100%; }
+}

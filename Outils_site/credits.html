@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crédits photos — GNINOU_FOOD</title>
+  <link rel="icon" type="image/png" href="../res/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/commun.css">
+  <link rel="stylesheet" href="../css/compte.css">
+  <script>try { var t = JSON.parse(localStorage.getItem('gf.theme')); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+
+<body data-racine="../" data-page="credits">
+
+  <main id="contenu" class="conteneur page-credits">
+    <h1 class="titre-credits"><i class="fa-solid fa-camera" aria-hidden="true"></i> Crédits photos</h1>
+    <p>Les photos des dossiers <code>res/</code> et <code>res/res_localmenu/</code> appartiennent à GNINOU_FOOD.
+      Les photos du dossier <code>res/images/</code> viennent de <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a>,
+      sous licences libres : merci à leurs auteurs. Elles ont été recadrées et compressées.</p>
+    <p>Icônes : <a href="https://fontawesome.com" target="_blank" rel="noopener">Font Awesome</a> (CC BY 4.0). Polices : Baloo 2 et Nunito (SIL Open Font License).</p>
+    <div class="tableau-defilant">
+      <table class="tableau-credits">
+        <thead><tr><th scope="col">Photo</th><th scope="col">Plat</th><th scope="col">Auteur</th><th scope="col">Licence</th></tr></thead>
+        <tbody id="corpsCredits"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="../js/donnees.js"></script>
+  <script src="../js/credits.js"></script>
+  <script src="../js/commun.js"></script>
+  <script>
+    document.getElementById('corpsCredits').innerHTML = CREDITS_PHOTOS.map(c => {
+      const plat = trouverPlat(c.id);
+      return `<tr>
+        <td><img src="../res/images/${c.id}.jpg" alt="" width="80" height="60" loading="lazy"></td>
+        <td>${plat ? echapper(plat.nom) : c.id}</td>
+        <td>${echapper(c.auteur)}</td>
+        <td><a href="${c.source}" target="_blank" rel="noopener">${echapper(c.licence)}</a></td>
+      </tr>`;
+    }).join('');
+  </script>
+</body>
+
+</html>

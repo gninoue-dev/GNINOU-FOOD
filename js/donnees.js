@@ -5,6 +5,8 @@
 // ============================================
 const CONFIG = {
   nom: 'GNINOU_FOOD',
+  // Titulaire des droits d'auteur du site
+  titulaireDroits: 'DEV-GNINOUE',
   slogan: 'Les saveurs de chez toi, livrées en un clic',
   email: 'info@gninoufood.com',
   // À COMPLÉTER : numéro de commande WhatsApp (format international sans +, ex. '2250700000000').

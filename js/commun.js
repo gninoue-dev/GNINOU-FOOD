@@ -424,7 +424,7 @@ function injecterPiedDePage() {
         </div>
       </div>
     </div>
-    <p class="pied-bas">&copy; ${new Date().getFullYear()} ${CONFIG.nom} · Tous droits réservés · Abidjan · <a href="${chemin('Outils_site/credits.html')}">Crédits photos</a></p>`;
+    <p class="pied-bas">${CONFIG.nom} · &copy; ${new Date().getFullYear()} ${CONFIG.titulaireDroits} · Tous droits réservés · Abidjan · <a href="${chemin('Outils_site/credits.html')}">Crédits photos</a></p>`;
   document.body.appendChild(pied);
 }
 

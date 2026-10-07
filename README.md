@@ -33,4 +33,6 @@ Tout se règle dans `js/donnees.js` :
 ## Crédits
 
 Les photos de `res/images/` viennent de Wikimedia Commons, sous licences libres ; la liste complète est sur la page `Outils_site/credits.html`.
-Les autres photos et le logo appartiennent à GNINOU_FOOD.
+Les autres photos et le logo appartiennent à DEV-GNINOUE.
+
+© DEV-GNINOUE. Tous droits réservés.

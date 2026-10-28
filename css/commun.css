@@ -824,3 +824,18 @@ h1, h2, h3, h4{ font-family: var(--police-titre); line-height: 1.2; margin: 0; }
 .pied-bas{ margin: 0; padding: 18px 20px; text-align: center; font-size: .85rem; color: #9E8C83; border-top: 1px solid #2E231F; }
 @media (max-width: 860px){ .pied-conteneur{ grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px){ .pied-conteneur{ grid-template-columns: 1fr; } }
+
+/* ============================================
+   Transitions entre les pages (View Transitions API, navigateurs récents)
+   L'en-tête reste en place, le contenu glisse doucement.
+   ============================================ */
+@view-transition{ navigation: auto; }
+.entete{ view-transition-name: entete; }
+::view-transition-old(root){ animation: gfSortiePage .22s var(--courbe) both; }
+::view-transition-new(root){ animation: gfEntreePage .42s var(--courbe) both; }
+@keyframes gfSortiePage{ to{ opacity: 0; transform: translateY(-14px); } }
+@keyframes gfEntreePage{ from{ opacity: 0; transform: translateY(22px); } }
+@media (prefers-reduced-motion: reduce){
+  @view-transition{ navigation: none; }
+}
+

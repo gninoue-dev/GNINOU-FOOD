@@ -815,6 +815,13 @@ function brancherActionsGlobales() {
 // Apparition douce des éléments .apparition au défilement
 function observerApparitions(racine = document) {
   const elements = racine.querySelectorAll('.apparition:not(.visible)');
+  // Les éléments voisins arrivent l'un après l'autre (sauf délai déjà choisi)
+  elements.forEach(el => {
+    if (el.style.getPropertyValue('--delai')) return;
+    const voisins = [...el.parentElement.children].filter(f => f.classList.contains('apparition'));
+    const rang = voisins.indexOf(el);
+    if (rang > 0) el.style.setProperty('--delai', `${Math.min(rang, 5) * 0.08}s`);
+  });
   if (mouvementReduit || !('IntersectionObserver' in window)) {
     elements.forEach(el => el.classList.add('visible'));
     return;
